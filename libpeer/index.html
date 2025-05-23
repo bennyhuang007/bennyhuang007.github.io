@@ -97,7 +97,7 @@ const options = {
       clean: true, 
       connectTimeout: 4000,
       clientId: 'web_client_' + Math.random().toString(16).substr(2, 8),
-      username: 'libpeer', 
+      username: 'webclient', 
       password: '12345678',
     };
 const client  = mqtt.connect('wss://ye65700e.ala.cn-hangzhou.emqxsl.cn:8084/mqtt',options)
@@ -147,7 +147,7 @@ var pc = new RTCPeerConnection({
   iceServers: [
     {
       urls: "turn:118.145.199.34:3478",
-      username: "web",
+      username: "libpeer",
       credential: "12345678"
     },
   ],
