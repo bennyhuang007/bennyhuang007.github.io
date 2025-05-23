@@ -93,7 +93,14 @@ const urlParams = new URLSearchParams(queryString)
 const deviceId = urlParams.get("id")
 const resultTopic = "/public/" + deviceId + "/result"
 const invokeTopic = "/public/" + deviceId + "/invoke"
-const client  = mqtt.connect('wss://libpeer.com:8084/mqtt')
+const options = {
+      clean: true, 
+      connectTimeout: 4000,
+      clientId: 'web_client_' + Math.random().toString(16).substr(2, 8),
+      username: 'xufeng', 
+      password: 'maja_123456',
+    };
+const client  = mqtt.connect('wss://ye65700e.ala.cn-hangzhou.emqxsl.cn',{})
 
 function getRandomItem(array) {
   return array[Math.floor(Math.random() * array.length)];
